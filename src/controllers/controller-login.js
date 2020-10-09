@@ -11,7 +11,9 @@ module.exports ={
     login(req,res){
         res.render("login",{
             url : 'http://localhost:5050/',
-            expressFlash: req.flash('message')
+            colorFlash: req.flash('color'),
+            statusFlash: req.flash('status'),
+            pesanFlash: req.flash('message'),
         });
     },
     loginAuth(req,res){

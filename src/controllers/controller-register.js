@@ -23,6 +23,9 @@ module.exports ={
                     `INSERT INTO table_user (user_name,user_email,user_password) VALUES (?,?,SHA2(?,512));`
                 , [username, email, password],function (error, results) {
                     if (error) throw error; 
+                    req.flash('color', 'success');
+                    req.flash('status', 'Yes..');
+                    req.flash('message', 'Registrasi berhasil');
                     res.redirect('/login');
                 });
                 connection.release();
