@@ -1,5 +1,4 @@
 const config = require('../configs/database');
-
 let mysql      = require('mysql');
 let pool       = mysql.createPool(config);
 
@@ -15,28 +14,16 @@ module.exports ={
     },
     saveRegister(req,res){
         let username = req.body.username;
-        let password = req.body.password;
-        if (username && password) {
+        let email = req.body.email;
+        let password = req.body.pass;
+        if (username && email && password) {
             pool.getConnection(function(err, connection) {
                 if (err) throw err;
                 connection.query(
-                    `SELECT * FROM table_user WHERE user_email = ? AND user_password = SHA2(?,224)`
-                , [username, password],function (error, results) {
-                    if (error) throw error;  
-                    if (results.length > 0) {
-                        if (results[0].user_status == 1) {
-                            req.session.loggedin = true;
-                            req.session.userid = results[0].user_id;
-                            req.session.username = results[0].user_name;
-                            res.redirect('/app');
-                        } else {
-                            req.flash('message', 'Your account is banned !');
-                            res.redirect('/login');
-                        }
-                    } else {
-                        req.flash('message', 'Account not found');
-                        res.redirect('/login');
-                    }
+                    `INSERT INTO table_user (user_name,user_email,user_password) VALUES (?,?,SHA2(?,512));`
+                , [username, email, password],function (error, results) {
+                    if (error) throw error; 
+                    res.redirect('/login');
                 });
                 connection.release();
             })

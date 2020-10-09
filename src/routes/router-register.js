@@ -3,6 +3,6 @@ const registerController = require('../controllers').register;
 const verifyUser = require('../configs/verify');
 
 router.get('/', verifyUser.isLogout, registerController.formRegister);
-router.post('/registration', verifyUser.isLogout, registerController.saveRegister);
+router.post('/save', verifyUser.isLogout, registerController.saveRegister);
 
 module.exports = router;
