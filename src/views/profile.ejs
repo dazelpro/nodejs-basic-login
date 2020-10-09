@@ -43,19 +43,22 @@
     <section class="mt-4 pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                     <div class="card">
-                        <div class="card-header">
-                            <h3>Hi, <b><%= userName %></b></h3>
-                        </div>
                         <div class="card-body">
-                            <blockquote class="blockquote mb-0">
-                                <p>Apa gunanya ilmu kalau tidak memperluas jiwa seseorang sehingga ia berlaku seperti samudera yang menampung sampah-sampah. Apa gunanya kepandaian kalau tidak memperbesar kepribadian seseorang sehingga ia makin sanggup memahami orang lain?</p>
-                                <footer class="blockquote-footer">Emha Ainun Nadjib</footer>
-                            </blockquote>
+                            <div class="form-group">
+                                <label>Nama:</label>
+                                <input type="text" value="<%= nama %>" name="pass" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="text" value="<%= email %>" name="pass" class="form-control" disabled>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3"></div>
             </div>
             
         </div>
