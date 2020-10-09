@@ -3,7 +3,7 @@ const loginController = require('../controllers').login;
 const verifyUser = require('../configs/verify');
 
 router.get('/', verifyUser.isLogout, loginController.login);
-router.get('/logout', loginController.loginAuth);
+router.get('/logout', loginController.logout);
 
 router.post('/auth', loginController.loginAuth);
 

@@ -14,6 +14,6 @@ module.exports = {
             next();
             return;
         }
-        res.redirect('/app');
+        res.redirect('/');
     }
 };
