@@ -8,6 +8,7 @@ const app = express();
 
 // Definisi lokasi file router
 const loginRoutes = require('./src/routes/router-login');
+const registerRoutes = require('./src/routes/router-register');
 const appRoutes = require('./src/routes/router-app');
 
 // Configurasi library bodyParser
@@ -34,9 +35,10 @@ app.set('view engine', 'ejs');
 
 // Gunakan routes yang telah didefinisikan
 app.use('/login', loginRoutes);
+app.use('/register', registerRoutes);
 app.use('/', appRoutes);
 
 // Gunakan port server
-app.listen(4300, ()=>{
-    console.log('Server Berjalan di Port : '+4300);
+app.listen(5050, ()=>{
+    console.log('Server Berjalan di Port : '+5050);
 });

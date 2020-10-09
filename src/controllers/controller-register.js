@@ -8,13 +8,12 @@ pool.on('error',(err)=> {
 });
 
 module.exports ={
-    login(req,res){
-        res.render("login",{
+    formRegister(req,res){
+        res.render("register",{
             url : 'http://localhost:5050/',
-            expressFlash: req.flash('message')
         });
     },
-    loginAuth(req,res){
+    saveRegister(req,res){
         let username = req.body.username;
         let password = req.body.password;
         if (username && password) {
