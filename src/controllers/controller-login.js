@@ -46,11 +46,12 @@ module.exports ={
         }
     },
     logout(req,res){
-        res.render("login",{
-            url : 'http://localhost:5050/',
-            colorFlash: req.flash('color'),
-            statusFlash: req.flash('status'),
-            pesanFlash: req.flash('message'),
+        req.session.destroy((err) => {
+            if(err) {
+                return console.log(err);
+            }
+            res.clearCookie('secretname');
+            res.redirect('/login');
         });
     },
 }
