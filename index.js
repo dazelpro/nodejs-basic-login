@@ -34,7 +34,7 @@ app.set('view engine', 'ejs');
 
 // Gunakan routes yang telah didefinisikan
 app.use('/login', loginRoutes);
-app.use('/app', appRoutes);
+app.use('/', appRoutes);
 
 // Gunakan port server
 app.listen(4300, ()=>{
