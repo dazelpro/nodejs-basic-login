@@ -10,7 +10,8 @@ pool.on('error',(err)=> {
 module.exports ={
     login(req,res){
         res.render("login",{
-            // expressFlash: req.flash('message')
+            url : 'http://localhost:4300/',
+            expressFlash: req.flash('message')
         });
     },
     loginAuth(req,res){
