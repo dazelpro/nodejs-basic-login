@@ -1,0 +1,33 @@
+
+
+    NODEJS-BASIC-LOGIN/
+    ├── node_modules/
+    ├── src/
+    │   ├── configs/
+    │   │   ├── database.js
+    │   │   └── verify.js
+    │   │
+    │   ├── controllers/
+    │   │   ├── controller-home.js
+    │   │   ├── controller-login.js
+    │   │   ├── controller-profile.js
+    │   │   ├── controller-register.js
+    │   │   └── index.js
+    │   │
+    │   ├── routes/
+    │   │   ├── router-app.js
+    │   │   ├── router-login.js
+    │   │   └── router-register.js
+    │   │
+    │   └── views/
+    │       ├── register.ejs
+    │       ├── login.ejs
+    │       ├── home.ejs
+    │       └── profile.ejs
+    │
+    ├── index.js
+    └── package.json
+
+
+
+
