@@ -1,5 +1,6 @@
 # Express.js Basic Login
 Learn basic login using NodeJS with the Express.js Framework and the EJS template engine that is connected to a MySQL database
+Tutorial : https://dazelpro.com/article/membuat-basic-login-dan-register-menggunakan-nodejs
 
 # How to run
 * Clone this repository
